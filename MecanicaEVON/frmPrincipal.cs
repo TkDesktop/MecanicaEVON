@@ -1,0 +1,78 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MecanicaEVON
+{
+    public partial class frmPrincipal : Form
+    {
+        public frmPrincipal()
+        {
+            InitializeComponent();
+        }
+        DateTime dttLogin;
+        
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = $"Usuario: {Global.nome} ({Global.login})";
+            lblServidor.Text = $"Servidor: {Global.servidor}";
+            lblBanco.Text = $"Banco: {Global.banco}";
+            dttLogin = DateTime.Now;
+            tmrTempo.Enabled = true;
+
+            
+            if (Global.perfil != "administrador")
+            {
+                mnuCadastro.Visible = false;
+            }
+        }
+
+        private void tmrTempo_Tick(object sender, EventArgs e)
+        {
+            TimeSpan ts = DateTime.Now - dttLogin;
+            lblTempo.Text = $"Tempo: {ts.Hours.ToString("00")}:{ts.Minutes.ToString("00")}:{ts.Seconds.ToString("00")}";
+            Application.DoEvents();
+        }
+
+        private void AbrirForm(Form form)
+        {
+            foreach (Form filho in this.MdiChildren)
+            {
+                if (filho.Name == form.Name)
+                {
+                    filho.BringToFront();
+                    return;
+                }
+            }
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void mnuSobre_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmSobre());
+        }
+
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Deseja realmente encerrar a aplicação?",
+              "Ficha Cadastral", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+              MessageBoxDefaultButton.Button2);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+    }
+}
