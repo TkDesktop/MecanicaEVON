@@ -89,7 +89,7 @@ namespace MecanicaEVON
                 usuario.login = txtUsuario.Text;
                 usuario.Consultar();
 
-                if (Global.EncriptPassword(txtSenha.Text) != usuario.password || !usuario.ativo)
+                if (Global.EncriptPassword(txtSenha.Text) != usuario.senhaHash || !usuario.ativo)
                 {
                     MessageBox.Show("Usuário e/ou senha inválidos!!!", "Login",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);

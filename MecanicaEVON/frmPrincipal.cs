@@ -27,9 +27,22 @@ namespace MecanicaEVON
             tmrTempo.Enabled = true;
 
             
-            if (Global.perfil != "administrador")
+            if (Global.perfil != "administrador" && Global.perfil != "gerente")
             {
                 mnuCadastro.Visible = false;
+                mnuDominios.Visible = false;
+            }
+            if (Global.perfil != "administrador" && Global.perfil != "gerente" && Global.perfil != "estoquista")
+            {
+                mnuEstoque.Visible = false;
+            }
+            if (Global.perfil != "administrador" && Global.perfil != "gerente" && Global.perfil != "atendente")
+            {
+                mnuGerarPedido.Visible = false;
+            }
+            if (Global.perfil != "administrador" && Global.perfil != "gerente" && Global.perfil != "atendente" && Global.perfil != "mecanico")
+            {
+                mnuConsultarPedido.Visible = false;
             }
         }
 
@@ -62,7 +75,7 @@ namespace MecanicaEVON
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Deseja realmente encerrar a aplicação?",
-              "Ficha Cadastral", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+              "Oficina - EVOM", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
               MessageBoxDefaultButton.Button2);
             if (result == DialogResult.No)
             {
@@ -73,6 +86,56 @@ namespace MecanicaEVON
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void tipoModeloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmTipoTelefone());
+        }
+
+        private void mnuCategoria_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmCategoria());
+        }
+
+        private void mnuCombustivel_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmCombustivel());
+        }
+
+        private void mnuCargo_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmCargo());
+        }
+
+        private void mnuEspecialidade_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmEspecialidade());
+        }
+
+        private void mnuMarca_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmMarca());
+        }
+
+        private void mnuStatus_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmStatus());
+        }
+
+        private void mnuTipoServico_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmTipoServico());
+        }
+
+        private void mnuCadveiculo_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmCadVeiculo());
+        }
+
+        private void mnuModelo_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmModelo());
         }
     }
 }

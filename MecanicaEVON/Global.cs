@@ -39,5 +39,36 @@ namespace MecanicaEVON
 
             return Regex.Replace(BitConverter.ToString(criptografado), "-", "").ToLower();
         }
+
+        public static DataTable ConsultarMarca()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string querySql = "select id, marca from tblMarca";
+                dt = (new AcessoBD()).Consultar(querySql, new List<SqlParameter>());
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public static DataTable ConsultaModelos(int idMarca)
+        {
+            try
+            {
+                List<SqlParameter> lista = new List<SqlParameter>();
+                DataTable dt = new DataTable();
+                string querySql = "select id, modelo from tblModelo where idMarca = @idMarca";
+                lista.Add(new SqlParameter("@idMarca", idMarca));
+                dt = (new AcessoBD()).Consultar(querySql, lista);
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -73,6 +73,16 @@ namespace MecanicaEVON.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap address_book_add {
             get {
                 object obj = ResourceManager.GetObject("address_book_add", resourceCulture);
@@ -223,6 +233,16 @@ namespace MecanicaEVON.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eraser2 {
+            get {
+                object obj = ResourceManager.GetObject("eraser2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap especialidade {
             get {
                 object obj = ResourceManager.GetObject("especialidade", resourceCulture);
@@ -236,6 +256,16 @@ namespace MecanicaEVON.Properties {
         internal static System.Drawing.Bitmap estoque_pronto {
             get {
                 object obj = ResourceManager.GetObject("estoque-pronto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit {
+            get {
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +313,16 @@ namespace MecanicaEVON.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_mecanica {
+            get {
+                object obj = ResourceManager.GetObject("logo_mecanica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lupa {
             get {
                 object obj = ResourceManager.GetObject("lupa", resourceCulture);
@@ -306,6 +346,16 @@ namespace MecanicaEVON.Properties {
         internal static System.Drawing.Bitmap saida {
             get {
                 object obj = ResourceManager.GetObject("saida", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salve_ {
+            get {
+                object obj = ResourceManager.GetObject("salve-", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

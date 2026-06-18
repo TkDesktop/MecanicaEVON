@@ -52,12 +52,13 @@
             this.mnuDominios = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCombustivel = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCategoria = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEspecialidade = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCargo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEspecialidade = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuMarca = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuStatus = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTipoServico = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuMarca = new System.Windows.Forms.ToolStripMenuItem();
             this.tipoModeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuModelo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSobre = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSair = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
@@ -72,16 +73,16 @@
             this.lblServidor,
             this.lblBanco,
             this.lblTempo});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 522);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 639);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1127, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1384, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // lblUsuario
             // 
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(278, 17);
+            this.lblUsuario.Size = new System.Drawing.Size(342, 17);
             this.lblUsuario.Spring = true;
             this.lblUsuario.Text = "Usuario: ";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -89,21 +90,21 @@
             // lblServidor
             // 
             this.lblServidor.Name = "lblServidor";
-            this.lblServidor.Size = new System.Drawing.Size(278, 17);
+            this.lblServidor.Size = new System.Drawing.Size(342, 17);
             this.lblServidor.Spring = true;
             this.lblServidor.Text = "Servidor: ";
             // 
             // lblBanco
             // 
             this.lblBanco.Name = "lblBanco";
-            this.lblBanco.Size = new System.Drawing.Size(278, 17);
+            this.lblBanco.Size = new System.Drawing.Size(342, 17);
             this.lblBanco.Spring = true;
             this.lblBanco.Text = "Banco: ";
             // 
             // lblTempo
             // 
             this.lblTempo.Name = "lblTempo";
-            this.lblTempo.Size = new System.Drawing.Size(278, 17);
+            this.lblTempo.Size = new System.Drawing.Size(342, 17);
             this.lblTempo.Spring = true;
             this.lblTempo.Text = "Tempo:  00:00:00";
             this.lblTempo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -126,7 +127,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(1127, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1384, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -149,6 +150,7 @@
             this.mnuCadveiculo.Name = "mnuCadveiculo";
             this.mnuCadveiculo.Size = new System.Drawing.Size(142, 22);
             this.mnuCadveiculo.Text = "&Veiculo";
+            this.mnuCadveiculo.Click += new System.EventHandler(this.mnuCadveiculo_Click);
             // 
             // mnuCadPeca
             // 
@@ -236,7 +238,8 @@
             this.mnuMarca,
             this.mnuStatus,
             this.mnuTipoServico,
-            this.tipoModeloToolStripMenuItem});
+            this.tipoModeloToolStripMenuItem,
+            this.mnuModelo});
             this.mnuDominios.Image = global::MecanicaEVON.Properties.Resources.armazenamento_de_banco_de_dados;
             this.mnuDominios.Name = "mnuDominios";
             this.mnuDominios.Size = new System.Drawing.Size(86, 20);
@@ -248,6 +251,7 @@
             this.mnuCombustivel.Name = "mnuCombustivel";
             this.mnuCombustivel.Size = new System.Drawing.Size(180, 22);
             this.mnuCombustivel.Text = "&Combustivel";
+            this.mnuCombustivel.Click += new System.EventHandler(this.mnuCombustivel_Click);
             // 
             // mnuCategoria
             // 
@@ -255,13 +259,7 @@
             this.mnuCategoria.Name = "mnuCategoria";
             this.mnuCategoria.Size = new System.Drawing.Size(180, 22);
             this.mnuCategoria.Text = "C&ategoria";
-            // 
-            // mnuEspecialidade
-            // 
-            this.mnuEspecialidade.Image = global::MecanicaEVON.Properties.Resources.especialidade;
-            this.mnuEspecialidade.Name = "mnuEspecialidade";
-            this.mnuEspecialidade.Size = new System.Drawing.Size(180, 22);
-            this.mnuEspecialidade.Text = "&Especialidade";
+            this.mnuCategoria.Click += new System.EventHandler(this.mnuCategoria_Click);
             // 
             // mnuCargo
             // 
@@ -269,20 +267,15 @@
             this.mnuCargo.Name = "mnuCargo";
             this.mnuCargo.Size = new System.Drawing.Size(180, 22);
             this.mnuCargo.Text = "Car&go";
+            this.mnuCargo.Click += new System.EventHandler(this.mnuCargo_Click);
             // 
-            // mnuStatus
+            // mnuEspecialidade
             // 
-            this.mnuStatus.Image = global::MecanicaEVON.Properties.Resources.status;
-            this.mnuStatus.Name = "mnuStatus";
-            this.mnuStatus.Size = new System.Drawing.Size(180, 22);
-            this.mnuStatus.Text = "&Status";
-            // 
-            // mnuTipoServico
-            // 
-            this.mnuTipoServico.Image = global::MecanicaEVON.Properties.Resources.servico;
-            this.mnuTipoServico.Name = "mnuTipoServico";
-            this.mnuTipoServico.Size = new System.Drawing.Size(180, 22);
-            this.mnuTipoServico.Text = "T&ipo Serviço";
+            this.mnuEspecialidade.Image = global::MecanicaEVON.Properties.Resources.especialidade;
+            this.mnuEspecialidade.Name = "mnuEspecialidade";
+            this.mnuEspecialidade.Size = new System.Drawing.Size(180, 22);
+            this.mnuEspecialidade.Text = "&Especialidade";
+            this.mnuEspecialidade.Click += new System.EventHandler(this.mnuEspecialidade_Click);
             // 
             // mnuMarca
             // 
@@ -290,6 +283,23 @@
             this.mnuMarca.Name = "mnuMarca";
             this.mnuMarca.Size = new System.Drawing.Size(180, 22);
             this.mnuMarca.Text = "&Marca";
+            this.mnuMarca.Click += new System.EventHandler(this.mnuMarca_Click);
+            // 
+            // mnuStatus
+            // 
+            this.mnuStatus.Image = global::MecanicaEVON.Properties.Resources.status;
+            this.mnuStatus.Name = "mnuStatus";
+            this.mnuStatus.Size = new System.Drawing.Size(180, 22);
+            this.mnuStatus.Text = "&Status";
+            this.mnuStatus.Click += new System.EventHandler(this.mnuStatus_Click);
+            // 
+            // mnuTipoServico
+            // 
+            this.mnuTipoServico.Image = global::MecanicaEVON.Properties.Resources.servico;
+            this.mnuTipoServico.Name = "mnuTipoServico";
+            this.mnuTipoServico.Size = new System.Drawing.Size(180, 22);
+            this.mnuTipoServico.Text = "T&ipo Serviço";
+            this.mnuTipoServico.Click += new System.EventHandler(this.mnuTipoServico_Click);
             // 
             // tipoModeloToolStripMenuItem
             // 
@@ -297,6 +307,15 @@
             this.tipoModeloToolStripMenuItem.Name = "tipoModeloToolStripMenuItem";
             this.tipoModeloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tipoModeloToolStripMenuItem.Text = "Tipo &Telefone";
+            this.tipoModeloToolStripMenuItem.Click += new System.EventHandler(this.tipoModeloToolStripMenuItem_Click);
+            // 
+            // mnuModelo
+            // 
+            this.mnuModelo.Image = global::MecanicaEVON.Properties.Resources.carro_de_brinquedo;
+            this.mnuModelo.Name = "mnuModelo";
+            this.mnuModelo.Size = new System.Drawing.Size(180, 22);
+            this.mnuModelo.Text = "M&odelo";
+            this.mnuModelo.Click += new System.EventHandler(this.mnuModelo_Click);
             // 
             // mnuSobre
             // 
@@ -318,7 +337,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 544);
+            this.ClientSize = new System.Drawing.Size(1384, 661);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -328,7 +347,7 @@
             this.MinimizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EVOM - PRINCIPAL";
+            this.Text = "EVOM - Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.statusStrip1.ResumeLayout(false);
@@ -372,5 +391,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuTipoServico;
         private System.Windows.Forms.ToolStripMenuItem mnuMarca;
         private System.Windows.Forms.ToolStripMenuItem tipoModeloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuModelo;
     }
 }

@@ -13,7 +13,7 @@ namespace MecanicaEVON
         public int id { get; set; }
         public string login { get; set; }
         public string nome { get; set; }
-        public string password { get; set; }
+        public string senhaHash { get; set; }
         public bool ativo { get; set; }
         public string perfil {  get; set; }
 
@@ -22,7 +22,7 @@ namespace MecanicaEVON
             id = 0;
             login = string.Empty;
             nome = string.Empty;
-            password = string.Empty;
+            senhaHash = string.Empty;
             ativo = false;
             perfil = string.Empty;
         }
@@ -36,7 +36,7 @@ namespace MecanicaEVON
             try
             {
                 parametros.Clear();
-                querySql = "select id, login, nome, password, ativo, perfil \n";
+                querySql = "select id, login, nome, senhaHash, ativo, perfil \n";
                 querySql += "from tblUsuario \n";
                 if (id != 0)
                 {
@@ -62,7 +62,7 @@ namespace MecanicaEVON
                     id = Convert.ToInt32(dt.Rows[0]["id"]);
                     login = dt.Rows[0]["login"].ToString();
                     nome = dt.Rows[0]["nome"].ToString();
-                    password = dt.Rows[0]["password"].ToString();
+                    senhaHash = dt.Rows[0]["senhaHash"].ToString();
                     ativo = Convert.ToBoolean(dt.Rows[0]["ativo"]);
                     perfil = dt.Rows[0]["perfil"].ToString();
                 }
@@ -81,16 +81,16 @@ namespace MecanicaEVON
                 if (id == 0)
                 {
                     querySql = "insert into tblUsuario \n";
-                    querySql += "(login, nome, password, ativo, perfil)\n";
+                    querySql += "(login, nome, senhaHash, ativo, perfil)\n";
                     querySql += "values \n";
-                    querySql += "(@login, @nome, @password, @ativo, @perfil)\n";
+                    querySql += "(@login, @nome, @senhaHash, @ativo, @perfil)\n";
                 }
                 else
                 {
                     querySql = "update tblUsuario set \n";
                     querySql += "login    = @login, \n";
                     querySql += "nome     = @nome, \n";
-                    querySql += "password = @password, \n";
+                    querySql += "senhaHash = @senhaHash, \n";
                     querySql += "ativo    = @ativo, \n";
                     querySql += "perfil   = @perfil \n";
                     querySql += "where id = @id\n";
@@ -98,7 +98,7 @@ namespace MecanicaEVON
                 }
                 parametros.Add(new SqlParameter("@login", login));
                 parametros.Add(new SqlParameter("@nome", nome));
-                parametros.Add(new SqlParameter("@password", password));
+                parametros.Add(new SqlParameter("@senhaHash", senhaHash));
                 parametros.Add(new SqlParameter("@ativo", ativo));
                 parametros.Add(new SqlParameter("@perfil", perfil));
 
