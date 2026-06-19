@@ -93,5 +93,42 @@ namespace MecanicaEVON
             }
         }
 
+        public void Gravar()
+        {
+            try
+            {
+                parametros.Clear();
+                if (id == 0)
+                {
+                    querySql = "insert into tblVeiculo \n";
+                    querySql += "(placa, ano, idModelo, idCombustivel, idCliente)\n";
+                    querySql += "values \n";
+                    querySql += "(@placa, @ano, @idModelo, @idCombustivel, @idCliente)\n";
+                }
+                else
+                {
+                    querySql = "update tblVeiculo set \n";
+                    querySql += "placa = @placa, \n";
+                    querySql += "ano = @ano, \n";
+                    querySql += "idModelo = @idModelo, \n";
+                    querySql += "idCombustivel = @idCombustivel, \n";
+                    querySql += "idCliente = @idCliente \n";
+                    querySql += "where id = @id \n";
+                    parametros.Add(new SqlParameter("@id", id));
+                }
+                parametros.Add(new SqlParameter("@placa", placa));
+                parametros.Add(new SqlParameter("@ano", ano));
+                parametros.Add(new SqlParameter("@idModelo", idModelo));
+                parametros.Add(new SqlParameter("@idCombustivel", idCombustivel));
+                parametros.Add(new SqlParameter("@idCliente", idCliente));
+                acesso.Executar(querySql, parametros);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
     }
 }

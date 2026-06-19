@@ -61,26 +61,31 @@ namespace MecanicaEVON
 
         private void PreencherFormulario()
         {
-
-            
             txtCpf.Text = cliente.cpf;
             txtNomeCliente.Text = cliente.nomeCompleto;
-            cboModelo.SelectedValue = veiculo.idModelo;
             cboMarca.SelectedValue = veiculo.idMarca;
+            cboModelo.SelectedValue = veiculo.idModelo;
             txtAno.Text = veiculo.ano;
             txtPlaca.Text = veiculo.placa;
             cboCombustivel.SelectedValue = veiculo.idCombustivel;
 
-
         }
 
-
+        private void PreencherClasse()
+        {
+            veiculo.placa = txtPlaca.Text;
+            veiculo.ano = txtAno.Text;
+            veiculo.idModelo = Convert.ToInt32(cboModelo.SelectedValue);
+            veiculo.idCombustivel = Convert.ToInt32(cboCombustivel.SelectedValue);
+            veiculo.idCliente = cliente.id;
+           
+        }
 
         private void txtCpf_Leave(object sender, EventArgs e)
         {
             if (txtCpf.Text != "")
             {
-                Cliente cliente = new Cliente();
+                cliente = new Cliente();
                 cliente.cpf = txtCpf.Text;
                 cliente.Consultar();
 
@@ -115,7 +120,6 @@ namespace MecanicaEVON
             cboCombustivel.ValueMember = "id";
             cboCombustivel.SelectedIndex = -1;
         }
-
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -198,6 +202,74 @@ namespace MecanicaEVON
             {
                 CarregarModelo(Convert.ToInt32(cboMarca.SelectedValue));
 
+            }
+        }
+
+        private string ValidarPreenchimento()
+        {
+            string msgErro = string.Empty;
+
+            if (txtPlaca.Text == string.Empty)
+            {
+                msgErro += "Preencha o campo PLACA.\n";
+            }
+
+            if (txtAno.Text == string.Empty)
+            {
+                msgErro += "Preencha o campo aANO. \n";
+            }
+            if (cboCombustivel.SelectedIndex == -1)
+            {
+                msgErro += "Preencha o campo COMBUSTIVEL. \n";
+            }
+            if (cboMarca.SelectedIndex == -1)
+            {
+                msgErro += "Preencha o campo MARCA. \n";
+            }
+            if (cboModelo.SelectedIndex == -1)
+            {
+                msgErro += "Preencha o campo MODELO. \n";
+            }
+            if (txtCpf.Text == string.Empty)
+            {
+                msgErro += "Preencha o campo CPF. \n";
+            }
+            if (txtNomeCliente.Text == string.Empty)
+            {
+                msgErro += "CPF Invalido. \n";
+            }
+
+            return msgErro;
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (veiculo == null)
+                {
+                    veiculo = new CadVeiculo();
+                }
+
+                string mensagem = ValidarPreenchimento();
+                if (mensagem !=  string.Empty)
+                {
+                    MessageBox.Show(mensagem,"Erro de Preenchimento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                PreencherClasse();
+                veiculo.Gravar();
+
+                MessageBox.Show("Veiculo gravado com sucesso!!!",
+                   "Cadastro de Veiculo",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpar();
+                PreencherGrid();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }

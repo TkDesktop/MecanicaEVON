@@ -148,7 +148,7 @@
             // 
             this.mnuCadveiculo.Image = global::MecanicaEVON.Properties.Resources.carro_de_brinquedo;
             this.mnuCadveiculo.Name = "mnuCadveiculo";
-            this.mnuCadveiculo.Size = new System.Drawing.Size(142, 22);
+            this.mnuCadveiculo.Size = new System.Drawing.Size(180, 22);
             this.mnuCadveiculo.Text = "&Veiculo";
             this.mnuCadveiculo.Click += new System.EventHandler(this.mnuCadveiculo_Click);
             // 
@@ -156,28 +156,29 @@
             // 
             this.mnuCadPeca.Image = global::MecanicaEVON.Properties.Resources.freio;
             this.mnuCadPeca.Name = "mnuCadPeca";
-            this.mnuCadPeca.Size = new System.Drawing.Size(142, 22);
+            this.mnuCadPeca.Size = new System.Drawing.Size(180, 22);
             this.mnuCadPeca.Text = "&Peça";
+            this.mnuCadPeca.Click += new System.EventHandler(this.mnuCadPeca_Click);
             // 
             // mnuCadCliente
             // 
             this.mnuCadCliente.Image = global::MecanicaEVON.Properties.Resources.atendimento_ao_cliente;
             this.mnuCadCliente.Name = "mnuCadCliente";
-            this.mnuCadCliente.Size = new System.Drawing.Size(142, 22);
+            this.mnuCadCliente.Size = new System.Drawing.Size(180, 22);
             this.mnuCadCliente.Text = "&Cliente";
             // 
             // mnuCadFornecedor
             // 
             this.mnuCadFornecedor.Image = global::MecanicaEVON.Properties.Resources.companhia;
             this.mnuCadFornecedor.Name = "mnuCadFornecedor";
-            this.mnuCadFornecedor.Size = new System.Drawing.Size(142, 22);
+            this.mnuCadFornecedor.Size = new System.Drawing.Size(180, 22);
             this.mnuCadFornecedor.Text = "&Fornecedor";
             // 
             // mnuCadFuncionario
             // 
             this.mnuCadFuncionario.Image = global::MecanicaEVON.Properties.Resources.carteira_de_identidade;
             this.mnuCadFuncionario.Name = "mnuCadFuncionario";
-            this.mnuCadFuncionario.Size = new System.Drawing.Size(142, 22);
+            this.mnuCadFuncionario.Size = new System.Drawing.Size(180, 22);
             this.mnuCadFuncionario.Text = "F&uncionarios";
             // 
             // mnuEstoque
@@ -249,7 +250,7 @@
             // 
             this.mnuCombustivel.Image = global::MecanicaEVON.Properties.Resources.gasolina;
             this.mnuCombustivel.Name = "mnuCombustivel";
-            this.mnuCombustivel.Size = new System.Drawing.Size(180, 22);
+            this.mnuCombustivel.Size = new System.Drawing.Size(146, 22);
             this.mnuCombustivel.Text = "&Combustivel";
             this.mnuCombustivel.Click += new System.EventHandler(this.mnuCombustivel_Click);
             // 
@@ -257,7 +258,7 @@
             // 
             this.mnuCategoria.Image = global::MecanicaEVON.Properties.Resources.lupa;
             this.mnuCategoria.Name = "mnuCategoria";
-            this.mnuCategoria.Size = new System.Drawing.Size(180, 22);
+            this.mnuCategoria.Size = new System.Drawing.Size(146, 22);
             this.mnuCategoria.Text = "C&ategoria";
             this.mnuCategoria.Click += new System.EventHandler(this.mnuCategoria_Click);
             // 
@@ -265,7 +266,7 @@
             // 
             this.mnuCargo.Image = global::MecanicaEVON.Properties.Resources.cargo;
             this.mnuCargo.Name = "mnuCargo";
-            this.mnuCargo.Size = new System.Drawing.Size(180, 22);
+            this.mnuCargo.Size = new System.Drawing.Size(146, 22);
             this.mnuCargo.Text = "Car&go";
             this.mnuCargo.Click += new System.EventHandler(this.mnuCargo_Click);
             // 
@@ -273,7 +274,7 @@
             // 
             this.mnuEspecialidade.Image = global::MecanicaEVON.Properties.Resources.especialidade;
             this.mnuEspecialidade.Name = "mnuEspecialidade";
-            this.mnuEspecialidade.Size = new System.Drawing.Size(180, 22);
+            this.mnuEspecialidade.Size = new System.Drawing.Size(146, 22);
             this.mnuEspecialidade.Text = "&Especialidade";
             this.mnuEspecialidade.Click += new System.EventHandler(this.mnuEspecialidade_Click);
             // 
@@ -281,7 +282,7 @@
             // 
             this.mnuMarca.Image = global::MecanicaEVON.Properties.Resources.brazao;
             this.mnuMarca.Name = "mnuMarca";
-            this.mnuMarca.Size = new System.Drawing.Size(180, 22);
+            this.mnuMarca.Size = new System.Drawing.Size(146, 22);
             this.mnuMarca.Text = "&Marca";
             this.mnuMarca.Click += new System.EventHandler(this.mnuMarca_Click);
             // 
@@ -289,7 +290,7 @@
             // 
             this.mnuStatus.Image = global::MecanicaEVON.Properties.Resources.status;
             this.mnuStatus.Name = "mnuStatus";
-            this.mnuStatus.Size = new System.Drawing.Size(180, 22);
+            this.mnuStatus.Size = new System.Drawing.Size(146, 22);
             this.mnuStatus.Text = "&Status";
             this.mnuStatus.Click += new System.EventHandler(this.mnuStatus_Click);
             // 
@@ -297,7 +298,7 @@
             // 
             this.mnuTipoServico.Image = global::MecanicaEVON.Properties.Resources.servico;
             this.mnuTipoServico.Name = "mnuTipoServico";
-            this.mnuTipoServico.Size = new System.Drawing.Size(180, 22);
+            this.mnuTipoServico.Size = new System.Drawing.Size(146, 22);
             this.mnuTipoServico.Text = "T&ipo Serviço";
             this.mnuTipoServico.Click += new System.EventHandler(this.mnuTipoServico_Click);
             // 
@@ -305,7 +306,7 @@
             // 
             this.tipoModeloToolStripMenuItem.Image = global::MecanicaEVON.Properties.Resources.ligar;
             this.tipoModeloToolStripMenuItem.Name = "tipoModeloToolStripMenuItem";
-            this.tipoModeloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tipoModeloToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.tipoModeloToolStripMenuItem.Text = "Tipo &Telefone";
             this.tipoModeloToolStripMenuItem.Click += new System.EventHandler(this.tipoModeloToolStripMenuItem_Click);
             // 
@@ -313,7 +314,7 @@
             // 
             this.mnuModelo.Image = global::MecanicaEVON.Properties.Resources.carro_de_brinquedo;
             this.mnuModelo.Name = "mnuModelo";
-            this.mnuModelo.Size = new System.Drawing.Size(180, 22);
+            this.mnuModelo.Size = new System.Drawing.Size(146, 22);
             this.mnuModelo.Text = "M&odelo";
             this.mnuModelo.Click += new System.EventHandler(this.mnuModelo_Click);
             // 

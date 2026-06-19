@@ -137,5 +137,10 @@ namespace MecanicaEVON
         {
             AbrirForm(new frmModelo());
         }
+
+        private void mnuCadPeca_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmCadPeca());
+        }
     }
 }

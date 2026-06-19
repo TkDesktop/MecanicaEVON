@@ -60,6 +60,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCadPeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadPeca.Designer.cs">
+      <DependentUpon>frmCadPeca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCadVeiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadPeca.resx">
+      <DependentUpon>frmCadPeca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadVeiculo.resx">
       <DependentUpon>frmCadVeiculo.cs</DependentUpon>
