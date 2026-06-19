@@ -213,6 +213,16 @@ namespace MecanicaEVON.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_18_de_jun__de_2026__19_24_10 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 18 de jun. de 2026, 19_24_10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap companhia {
             get {
                 object obj = ResourceManager.GetObject("companhia", resourceCulture);
