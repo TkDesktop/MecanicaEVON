@@ -4,39 +4,41 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MecanicaEVON
 {
-    public class Cliente
+    public class Funcionario
     {
-        public int id { get; set; }
+        public int id {  get; set; }
         public string nomeCompleto { get; set; }
         public string cpf { get; set; }
-        public DateTime dataNascimento { get; set; }
-        public string email { get; set; }
+        public DateTime dataAdmissao { get; set; }
+        public int idCargo { get; set; }
+        public int idEspecialidade { get; set; }
 
-        public Cliente()
+        public Funcionario()
         {
             id = 0;
             nomeCompleto = string.Empty;
             cpf = string.Empty;
-            dataNascimento = DateTime.Now;
-            email = string.Empty;
+            dataAdmissao = DateTime.MinValue;
+            idCargo = 0;
+            idEspecialidade = 0;
         }
         DataTable dt = new DataTable();
         List<SqlParameter> parametros = new List<SqlParameter>();
         AcessoBD acesso = new AcessoBD();
         string querySql = string.Empty;
 
+
         public DataTable Consultar()
         {
             try
             {
                 parametros.Clear();
-                querySql = "select id, nomeCompleto, cpf, dataNascimento, email \n";
-                querySql += "from tblCliente \n";
+                querySql = "select id, nomeCompleto, cpf, dataAdmissao, idCargo, idEspecialidade \n";
+                querySql += "from tblFuncionario \n";
                 if (id != 0)
                 {
                     querySql += "where id = @id \n";
@@ -45,22 +47,28 @@ namespace MecanicaEVON
                 else if (nomeCompleto != string.Empty)
                 {
                     querySql += "where nomeCompleto like @nomeCompleto \n";
-                    parametros.Add(new SqlParameter("@nomeCompleto", '%' + nomeCompleto + '%'));
+                    parametros.Add(new SqlParameter("@nome", '%' + nomeCompleto + '%'));
                 }
-                else if (cpf != string.Empty)
+                else if (idCargo  != 0)
                 {
-                    querySql += "where cpf like @cpf \n";
-                    parametros.Add(new SqlParameter("@cpf", '%' + cpf + '%'));
+                    querySql += "where idCargo = @idCargo";
+                    parametros.Add(new SqlParameter("@idCargo", idCargo));                 
                 }
-                    querySql += "order by id ";
+                else if (idEspecialidade != 0)
+                {
+                    querySql += "where idEspecialidade = @idEspecialidade";
+                    parametros.Add(new SqlParameter("@idEspecialidade", idEspecialidade));
+                }
+                    querySql += "order by nomeCompleto ";
                 dt = acesso.Consultar(querySql, parametros);
-                if (id != 0 || (cpf != string.Empty && dt.Rows.Count > 0))
+                if (id != 0)
                 {
                     id = Convert.ToInt32(dt.Rows[0]["id"]);
                     nomeCompleto = dt.Rows[0]["nomeCompleto"].ToString();
                     cpf = dt.Rows[0]["cpf"].ToString();
-                    dataNascimento = Convert.ToDateTime(dt.Rows[0]["dataNascimento"]);
-                    email = dt.Rows[0]["email"].ToString();
+                    dataAdmissao = Convert.ToDateTime(dt.Rows[0]["dataAdmissao"]);
+                    idCargo = Convert.ToInt32(dt.Rows[0]["idCargo"]);
+                    idEspecialidade = Convert.ToInt32(dt.Rows[0]["idEspecialidade"]);
                 }
                 return dt;
             }
@@ -69,7 +77,6 @@ namespace MecanicaEVON
                 throw new Exception(ex.Message);
             }
         }
-
         public void Gravar()
         {
             try
@@ -77,26 +84,27 @@ namespace MecanicaEVON
                 parametros.Clear();
                 if (id == 0)
                 {
-                    querySql = "insert into tblCliente \n";
-                    querySql += "(nomeCompleto, cpf, dataNascimento, email)\n";
+                    querySql = "insert into tblFuncionario \n";
+                    querySql += "(nomeCompleto,cpf,dataAdmissao,idCargo, idEspecialidade)\n";
                     querySql += "values \n";
-                    querySql += "(@nomeCompleto, @cpf, @dataNascimento, @email)\n";
+                    querySql += "(@nomeCompleto,@cpf,@dataAdmissao,@idCargo, @idEspecialidade)\n";
                 }
                 else
                 {
-                    querySql = "update tblCliente set \n";
+                    querySql = "update tblFuncionario set \n";
                     querySql += "nomeCompleto = @nomeCompleto, \n";
                     querySql += "cpf = @cpf, \n";
-                    querySql += "dataNascimento = @dataNascimento, \n";
-                    querySql += "email = @email \n";
+                    querySql += "dataAdmissao = @dataAdmissao, \n";
+                    querySql += "idCargo = @idCargo, \n";
+                    querySql += "idEspecialidade = @idEspecialidade, \n";
                     querySql += "where id = @id\n";
                     parametros.Add(new SqlParameter("@id", id));
                 }
                 parametros.Add(new SqlParameter("@nomeCompleto", nomeCompleto));
                 parametros.Add(new SqlParameter("@cpf", cpf));
-                parametros.Add(new SqlParameter("@dataNascimento", dataNascimento));
-                parametros.Add(new SqlParameter("@email", email));
-
+                parametros.Add(new SqlParameter("@dataAdmissao", dataAdmissao));
+                parametros.Add(new SqlParameter("@idCargo", idCargo));
+                parametros.Add(new SqlParameter("@idEspecialidade", idEspecialidade));
                 acesso.Executar(querySql, parametros);
             }
             catch (Exception ex)
@@ -106,4 +114,3 @@ namespace MecanicaEVON
         }
     }
 }
-

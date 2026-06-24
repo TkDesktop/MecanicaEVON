@@ -36,9 +36,9 @@ namespace MecanicaEVON
         {
             try
             {
-                CadVeiculo cadVeiculo = new CadVeiculo();
+                veiculo = new CadVeiculo();
 
-                grdDados.DataSource = cadVeiculo.Consultar();
+                grdDados.DataSource = veiculo.Consultar();
 
                 grdDados.Columns[0].Visible = false;
                 grdDados.Columns[3].Visible = false;

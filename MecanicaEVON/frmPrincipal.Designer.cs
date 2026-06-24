@@ -166,6 +166,7 @@
             this.mnuCadCliente.Name = "mnuCadCliente";
             this.mnuCadCliente.Size = new System.Drawing.Size(180, 22);
             this.mnuCadCliente.Text = "&Cliente";
+            this.mnuCadCliente.Click += new System.EventHandler(this.mnuCadCliente_Click);
             // 
             // mnuCadFornecedor
             // 
@@ -173,6 +174,7 @@
             this.mnuCadFornecedor.Name = "mnuCadFornecedor";
             this.mnuCadFornecedor.Size = new System.Drawing.Size(180, 22);
             this.mnuCadFornecedor.Text = "&Fornecedor";
+            this.mnuCadFornecedor.Click += new System.EventHandler(this.mnuCadFornecedor_Click);
             // 
             // mnuCadFuncionario
             // 
@@ -180,6 +182,7 @@
             this.mnuCadFuncionario.Name = "mnuCadFuncionario";
             this.mnuCadFuncionario.Size = new System.Drawing.Size(180, 22);
             this.mnuCadFuncionario.Text = "F&uncionarios";
+            this.mnuCadFuncionario.Click += new System.EventHandler(this.mnuCadFuncionario_Click);
             // 
             // mnuEstoque
             // 
@@ -197,6 +200,7 @@
             this.mnuEstoqueVeiculo.Name = "mnuEstoqueVeiculo";
             this.mnuEstoqueVeiculo.Size = new System.Drawing.Size(117, 22);
             this.mnuEstoqueVeiculo.Text = "&Veiculos";
+            this.mnuEstoqueVeiculo.Click += new System.EventHandler(this.mnuEstoqueVeiculo_Click);
             // 
             // mnuEstoquePeca
             // 
@@ -204,6 +208,7 @@
             this.mnuEstoquePeca.Name = "mnuEstoquePeca";
             this.mnuEstoquePeca.Size = new System.Drawing.Size(117, 22);
             this.mnuEstoquePeca.Text = "&Peça";
+            this.mnuEstoquePeca.Click += new System.EventHandler(this.mnuEstoquePeca_Click);
             // 
             // mnuPedidos
             // 

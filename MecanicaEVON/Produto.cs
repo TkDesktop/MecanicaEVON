@@ -95,7 +95,7 @@ namespace MecanicaEVON
                 }
                 else
                 {
-                    querySql = "update tblModelo set \n";
+                    querySql = "update tblProduto set \n";
                     querySql += "nome = @nome, \n";
                     querySql += "descricao = @descricao, \n";
                     querySql += "preco = @preco, \n";

@@ -54,6 +54,37 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="Combustivel.cs" />
     <Compile Include="Especialidade.cs" />
+    <Compile Include="Fornecedor.cs" />
+    <Compile Include="frmCadCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadCliente.Designer.cs">
+      <DependentUpon>frmCadCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadFornecedor.Designer.cs">
+      <DependentUpon>frmCadFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadFuncionario.Designer.cs">
+      <DependentUpon>frmCadFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstoquePeca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstoquePeca.Designer.cs">
+      <DependentUpon>frmEstoquePeca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstoqueVeiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstoqueVeiculo.Designer.cs">
+      <DependentUpon>frmEstoqueVeiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +169,7 @@
     <Compile Include="frmTipoTelefone.Designer.cs">
       <DependentUpon>frmTipoTelefone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funcionario.cs" />
     <Compile Include="Global.cs" />
     <Compile Include="Marca.cs" />
     <Compile Include="Modelo.cs" />
@@ -145,9 +177,25 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Status.cs" />
+    <Compile Include="Telefone.cs" />
     <Compile Include="TipoServico.cs" />
     <Compile Include="TipoTelefone.cs" />
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="frmCadCliente.resx">
+      <DependentUpon>frmCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadFornecedor.resx">
+      <DependentUpon>frmCadFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadFuncionario.resx">
+      <DependentUpon>frmCadFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstoquePeca.resx">
+      <DependentUpon>frmEstoquePeca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstoqueVeiculo.resx">
+      <DependentUpon>frmEstoqueVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>

@@ -142,5 +142,30 @@ namespace MecanicaEVON
         {
             AbrirForm(new frmCadPeca());
         }
+
+        private void mnuCadCliente_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new frmCadCliente());
+        }
+
+        private void mnuEstoquePeca_Click(object sender, EventArgs e)
+        {
+            AbrirForm (new frmEstoquePeca());
+        }
+
+        private void mnuEstoqueVeiculo_Click(object sender, EventArgs e)
+        {
+            AbrirForm (new frmEstoqueVeiculo());
+        }
+
+        private void mnuCadFornecedor_Click(object sender, EventArgs e)
+        {
+            AbrirForm (new frmCadFornecedor());
+        }
+
+        private void mnuCadFuncionario_Click(object sender, EventArgs e)
+        {
+            AbrirForm (new frmCadFuncionario());
+        }
     }
 }

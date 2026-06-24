@@ -81,6 +81,7 @@
             this.rdbFornecedor.TabStop = true;
             this.rdbFornecedor.Text = "Fornecedor";
             this.rdbFornecedor.UseVisualStyleBackColor = true;
+            this.rdbFornecedor.CheckedChanged += new System.EventHandler(this.rdbFornecedor_CheckedChanged);
             // 
             // rdbProduto
             // 
@@ -93,6 +94,7 @@
             this.rdbProduto.TabStop = true;
             this.rdbProduto.Text = "Produto";
             this.rdbProduto.UseVisualStyleBackColor = true;
+            this.rdbProduto.CheckedChanged += new System.EventHandler(this.rdbProduto_CheckedChanged);
             // 
             // txtPesquisa
             // 
@@ -100,6 +102,7 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(420, 20);
             this.txtPesquisa.TabIndex = 1;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // lblPesquisa
             // 
@@ -137,6 +140,7 @@
             this.grdDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDados.Size = new System.Drawing.Size(688, 199);
             this.grdDados.TabIndex = 0;
+            this.grdDados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDados_CellClick);
             // 
             // txtNomeProduto
             // 
@@ -149,7 +153,7 @@
             // 
             this.lblNomeProduto.AutoSize = true;
             this.lblNomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeProduto.Location = new System.Drawing.Point(13, 301);
+            this.lblNomeProduto.Location = new System.Drawing.Point(14, 301);
             this.lblNomeProduto.Name = "lblNomeProduto";
             this.lblNomeProduto.Size = new System.Drawing.Size(51, 13);
             this.lblNomeProduto.TabIndex = 24;
@@ -283,6 +287,7 @@
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnCadastrar
             // 
@@ -295,6 +300,7 @@
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // frmCadPeca
             // 
