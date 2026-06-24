@@ -1,0 +1,22 @@
+INSERT INTO tblMarca (marca) VALUES
+('Volkswagen'),      -- 1
+('Fiat'),            -- 2
+('Chevrolet'),       -- 3
+('Ford'),            -- 4
+('Toyota'),          -- 5
+('Honda'),           -- 6
+('Hyundai'),         -- 7
+('Renault'),         -- 8
+('Nissan'),          -- 9
+('Peugeot'),         -- 10
+('Citroën'),         -- 11
+('Jeep'),            -- 12
+('Mitsubishi'),      -- 13
+('Kia'),             -- 14
+('BMW'),             -- 15
+('Mercedes-Benz'),   -- 16
+('Audi'),            -- 17
+('BYD'),             -- 18
+('Volvo'),           -- 19
+('Porsche'),         -- 20
+('Teste');           -- 21
